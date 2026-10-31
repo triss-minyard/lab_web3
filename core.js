@@ -53,9 +53,20 @@ function factorial(n) {
 /**
  * Задание 6. Проверка, является ли число степенью двойки (1, 2, 4, 8, …).
  */
+
 function isBinary(n) {
-    return n > 0 && (n & (n - 1)) === 0;
-}
+    if (n < 1 || !Number.isInteger(n)) {
+        return false;
+    }
+
+    while (n > 1) {
+        if (n % 2 !== 0) {
+            return false;
+        }
+        n = n / 2;
+    }
+
+    return true;
 
 /**
  * Задание 7. n-е число Фибоначчи.
