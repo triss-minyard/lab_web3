@@ -11,7 +11,7 @@ function isInteger(n) {
  * Верните массив чётных чисел от 2 до 20 включительно.
  */
 function even() {
-    const result = [];
+    let result = [];
     for (let i = 2; i <= 20; i += 2) {
         result.push(i);
     }
