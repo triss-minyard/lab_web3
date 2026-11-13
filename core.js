@@ -58,12 +58,14 @@ function fibonacci(n) {
     }
     return prev;
 }
-
-/** Задание 8. Функция с накоплением результата. */
+/** Задание 8.  */
 function getOperationFn(initialValue, operatorFn) {
     let current = initialValue;
 
     return function (newValue) {
+        if (typeof operatorFn !== 'function') {
+            return initialValue;
+        }
         current = operatorFn(current, newValue);
         return current;
     };
