@@ -1,6 +1,3 @@
-/**
- * Лабораторная работа «Основы JavaScript: функции».
- */
 
 /** Задание 1. Проверка на целое число. */
 function isInteger(n) {
@@ -73,12 +70,11 @@ function getOperationFn(initialValue, operatorFn) {
 }
 
 /** Задание 9. Генератор арифметической прогрессии. */
-function getOperationFn(initialValue, operatorFn) 
-{
-    let current = initialValue;
+function sequence(start = 0, step = 1) {
+    let current = start - step;
 
-    return function(newValue) {
-        current = operatorFn(current, newValue);
+    return function () {
+        current += step;
         return current;
     };
 }
@@ -115,7 +111,6 @@ function deepEqual(firstObject, secondObject) {
         if (!Object.prototype.hasOwnProperty.call(secondObject, key)) {
             return false;
         }
-
         if (!deepEqual(firstObject[key], secondObject[key])) {
             return false;
         }
@@ -123,6 +118,7 @@ function deepEqual(firstObject, secondObject) {
 
     return true;
 }
+
 module.exports = {
     isInteger,
     even,
